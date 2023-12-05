@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>ToDo List</title>
+
+
+
+
+</head>
+
+<body>
+    <h1>ToDo List</h1>
+    <div id="task-form">
+        <label for="task-name">Task Name:</label>
+        <input type="text" id="task-name">
+        <label for="task-priority">Priority (1-5):</label>
+        <input type="number" id="task-priority" min="1" max="5">
+        <label for="task-due-date">Due Date:</label>
+        <input type="date" id="task-due-date">
+        <button onclick="addTask()">Add Task</button>
+    </div>
+    <div id="task-list">
+        <label for="sort-select">Sort by:</label>
+        <select id="sort-select" onchange="sortTasks()">
+            <option value="nro">Task Number</option>
+            <option value="name">Task Name</option>
+            <option value="priority">Priority</option>
+            <option value="dueDate">Due Date</option>
+            <option value="status">Status</option>
+        </select>
+        <table id="task-table">
+            <thead>
+                <tr>
+                    <th>Task Number</th>
+                    <th>Task Name</th>
+                    <th>Priority</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="task-table-body">
+            </tbody>
+        </table>
+    </div>
+    <script src="java.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        function laske(taulukko) {
+            if (taulukko.length === 0) {
+                console.log("Tyhjä taulukko. Ei voi laskea tilastoja.");
+                return;
+            }
+
+            let pienin = taulukko[0];
+            let suurin = taulukko[0];
+            let summa = taulukko[0];
+
+            for (let i = 1; i < taulukko.length; i++) {
+                if (taulukko[i] < pienin) {
+                    pienin = taulukko[i];
+                }
+                if (taulukko[i] > suurin) {
+                    suurin = taulukko[i];
+                }
+                summa += taulukko[i];
+            }
+
+            const keskiarvo = summa / taulukko.length;
+
+            console.log("Pienin arvo: " + pienin);
+            console.log("Suurin arvo: " + suurin);
+            console.log("Summa: " + summa);
+            console.log("Keskiarvo: " + keskiarvo);
+        }
+
+        
+        const taulukko = [17, 1, 15, 2, 22];
+        laske(taulukko);
+
+
+
+
+
+
+
+
+    </script>
+</head>
+
+
+
+<body>
+
+
+</body>
+
+</html>

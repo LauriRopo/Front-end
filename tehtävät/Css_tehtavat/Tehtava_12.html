@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .header{
+                grid-area: header;
+                background-color: cyan;
+                padding: 30px;
+                text-align: center;
+                font-size: 35px;
+                margin-top: 5px;
+                margin-bottom: 5px;
+
+            }
+            .grid-container {
+                display: grid;
+                grid-template-areas: 
+                    'header header header header header header' 
+                    'left left middle middle right right' 
+                    'footer footer footer footer footer footer';
+                grid-column-gap: 100px;
+            
+            }
+            .left,
+            .middle,
+            .right {
+            padding: 10px;
+            height: 200px;
+            width: 300px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            }
+            .left {
+            grid-area: left;
+            }
+
+            
+            .middle {
+            grid-area: middle;
+            }
+
+           
+            .right {
+            grid-area: right;
+            }
+
+            
+            .footer {
+            grid-area: footer;
+            background-color: cyan;
+            padding: 15px;
+            margin: 5px;
+            text-align: center;
+            }
+            @media (max-width: 600px) {
+            .grid-container  {
+                grid-template-areas: 
+                'header header header header header header' 
+                'left left left left left left' 
+                'middle middle middle middle middle middle' 
+                'right right right right right right' 
+                'footer footer footer footer footer footer';
+            }
+        }
+
+
+            
+
+
+        </style>
+
+    </head>
+    <body>
+        <div class="grid-container">
+            <div class="header">
+              <h2>Terevetuloa</h2>
+            </div>
+            
+            <div class="left" style="background-color:lightblue;"><h1>Otsikko xd</h1><p>tietoa visiin</p></div>
+            <div class="middle" style="background-color:lightblue;"><h1>Otsikko xd</h1><p>tietoa visiin</p></div>  
+            <div class="right" style="background-color:lightblue"><h1>Otsikko xd</h1><p>tietoa visiin</p></div>
+            
+            <div class="footer">
+            <p>@Cöpyräitgh</p>
+            </div>
+          </div>
+
+    </body>
+</html>

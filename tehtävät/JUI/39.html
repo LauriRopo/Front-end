@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <style>
+        body {
+            background-color: #6b2b2b;
+        }
+
+        #register-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            border-radius: 20px;
+            background-color: #3498db;
+            color: #fff;
+            cursor: pointer;
+        }
+
+
+        #register-button:hover {
+            background-color: #2980b9;
+        }
+
+        #registration-dialog {
+            display: none;
+        }
+    </style>
+
+
+    <script>
+        $(function () {
+
+            $("#registration-dialog").dialog({
+                autoOpen: false,
+                modal: true,
+                buttons: {
+                    "Save": function () {
+
+                        var name = $("#name").val();
+                        var username = $("#username").val();
+
+                        if (name.length >= 5 && username.length >= 5) {
+                            // Rekisteröityminen onnistui
+                            $("#registered-user-info").text("Name: " + name + ", registration ID: " + username);
+                            $(this).dialog("close");
+                        } else {
+
+                            $("#error-message").text("name and registration ID must be atleast 5 charecter!");
+                        }
+                    },
+                    "Cancel": function () {
+                        $(this).dialog("close");
+                    }
+                },
+                close: function () {
+
+                    $("#name, #username").val("");
+                    $("#error-message").text("");
+                }
+            });
+
+
+            $("#register-button").on("click", function () {
+                $("#registration-dialog").dialog("open");
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <button id="register-button">Log in</button>
+
+
+    <div id="registration-dialog" title="Rekisteröityminen">
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+
+            <label for="username">registration ID:</label>
+            <input type="text" id="username" name="username">
+
+            <p id="error-message" style="color: red;"></p>
+        </form>
+    </div>
+
+
+    <p id="registered-user-info"></p>
+
+</body>
+
+</html>

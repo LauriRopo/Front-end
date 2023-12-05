@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Article Toggle</title>
+  <style>
+    article {
+      display: none;
+      transition: opacity 2s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#" onclick="showArticle(1)">linkki</a>
+    <a href="#" onclick="showArticle(2)">linkki</a>
+    <a href="#" onclick="showArticle(3)">linkki</a>
+  </nav>
+
+  <article id="article1">
+    <p>moi</p>
+  </article>
+
+  <article id="article2">
+    <p>moi taas</p>
+  </article>
+
+  <article id="article3">
+    <p>yhä moi</p>
+  </article>
+
+  <script>
+    function showArticle(articleNumber) {
+      
+      hideAllArticles();
+
+      
+      var articleId = "article" + articleNumber;
+      var article = document.getElementById(articleId);
+      if (article) {
+        article.style.display = "block";
+        
+        setTimeout(function() {
+          article.style.display = "none";
+        }, 3000);
+      }
+    }
+
+    function hideAllArticles() {
+      
+      var articles = document.querySelectorAll('article');
+      articles.forEach(function(article) {
+        article.style.display = "none";
+      });
+    }
+  </script>
+
+</body>
+</html>

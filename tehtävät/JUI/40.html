@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log in</title>
+  
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <style>
+    body {
+      background-color: #632d2d; 
+    }
+
+    #register-button {
+      display: block;
+      margin: 20px auto; 
+      padding: 10px 20px;
+      border-radius: 20px;
+      background-color: #3498db; 
+      color: #fff; 
+      cursor: pointer;
+    }
+
+   
+    #register-button:hover {
+      background-color: #2980b9;
+    }
+
+    #registration-dialog {
+      display: none; 
+    }
+
+    #additional-fields {
+      margin-top: 20px;
+    }
+
+    #additional-fields input, #additional-fields select {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    #additional-fields label {
+      display: block;
+      margin-top: 10px;
+    }
+  </style>
+
+  
+  <script>
+    $(function() {
+      
+      $("#registration-dialog").dialog({
+        autoOpen: false,
+        modal: true,
+        buttons: {
+          "Save": function() {
+            
+            var name = $("#name").val();
+            var username = $("#username").val();
+            var additionalInfoCheckbox = $("#additional-info-checkbox").prop("checked");
+            var school = additionalInfoCheckbox ? $("#school").val() : "Ei lisätietoja";
+            var age = additionalInfoCheckbox ? $("#age").val() : "Ei lisätietoja";
+
+            if (name.length >= 5 && username.length >= 5) {
+            
+              $("#registered-user-info").text("Registered user: Name: " + name + ", registration ID: " + username + ", Shcool: " + school + ", Age: " + age);
+              $(this).dialog("close");
+            } else {
+              
+              $("#error-message").text("Name and registration ID must be atleast 5 characters.");
+            }
+          },
+          "Cancel": function() {
+            $(this).dialog("close");
+          }
+        },
+        close: function() {
+          
+          $("#name, #username, #school, #age").val("");
+          $("#error-message").text("");
+          $("#additional-info-checkbox").prop("checked", false);
+          toggleAdditionalFields(false);
+        }
+      });
+
+      
+      $("#register-button").on("click", function() {
+        $("#registration-dialog").dialog("open");
+      });
+
+      
+      $("#additional-info-checkbox").on("change", function() {
+        var isChecked = $(this).prop("checked");
+        toggleAdditionalFields(isChecked);
+      });
+    });
+
+   
+    function toggleAdditionalFields(isChecked) {
+      $("#school, #age").prop("disabled", !isChecked);
+    }
+  </script>
+</head>
+<body>
+
+  <button id="register-button">Log in</button>
+
+  
+  <div id="registration-dialog" title="Rekisteröityminen">
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name">
+
+      <label for="username">registration ID:</label>
+      <input type="text" id="username" name="username">
+
+      <label for="additional-info-checkbox">More Info:</label>
+      <input type="checkbox" id="additional-info-checkbox">
+
+      <div id="additional-fields">
+        <label for="school">Shcool:</label>
+        <input type="text" id="school" name="school" disabled>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" disabled>
+      </div>
+
+      <p id="error-message" style="color: red;"></p>
+    </form>
+  </div>
+
+ 
+  <p id="registered-user-info"></p>
+
+</body>
+</html>

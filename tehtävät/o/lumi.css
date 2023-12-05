@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background: linear-gradient(#125169, #FFFFFF); /* Sky Blue to White gradient */
+}
+
+.snowflake {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  border-radius: 50%;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
+
+
+.snowflake:nth-child(1) {
+  left: 5%;
+  animation-duration: 8s;
+  animation-delay: 0s;
+}
+
+.snowflake:nth-child(2) {
+  left: 20%;
+  animation-duration: 10s;
+  animation-delay: 2s;
+}
+
+.snowflake:nth-child(3) {
+  left: 40%;
+  animation-duration: 12s;
+  animation-delay: 4s;
+}
+
+.snowflake:nth-child(4) {
+  left: 60%;
+  animation-duration: 8s;
+  animation-delay: 6s;
+}
+
+.snowflake:nth-child(5) {
+  left: 80%;
+  animation-duration: 10s;
+  animation-delay: 8s;
+}
+

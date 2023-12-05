@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kurssi ilmoittautiminen</title>
+</head>
+<body>
+    <h1>Kurssi ilmoittautiminen lomake</h1>
+    <form action="https://garagecoders.azurewebsites.net/process" method="post">
+        <label for="name">Nimi:</label>
+        <input 
+        type="text" id="name" name="name" required><br><br>
+
+        <label for="vuosi">Vuosikurssi:</label>
+        <input type="password" id="vuosi" name="vuosi" required><br><br>
+
+        <label for="Kurssi">Kurssin nimi:</label>
+        <select id="Kurssi" name="Kurssi">
+            <option value="Kurssi1">Matikka 1</option>
+            <option value="Kurssi2">pesäpallon perusteet</option>
+            <option value="Kurssi3">liikunta 2</option>
+        </select><br><br>
+
+        <label for="kurssityyppi">Kurssin tyyppi:</label>
+        <select id="kurssityyppi" name="kurssityyppi">
+            <option value="kurssityyppi1">Perusteet</option>
+            <option value="kurssityyppi2">etäkurssi</option>
+            <option value="kurssityyppi3">lähiopetus</option>
+        </select><br><br>
+
+        <label>Sukupuoli:</label>
+        <input type="radio" id="mies" name="gender" value="mies">
+        <label for="mies">Mies</label>
+        <input type="radio" id="nainen" name="gender" value="nainen">
+        <label for="nainen">Nainen</label><br><br>
+
+        <label>Harrastukset:</label><br>
+        <input type="checkbox" id="hobby1" name="hobby_pesäpallo" value="pesäpallo" checked>
+        <label for="hobby1">pesäpallo</label><br>
+        <input type="checkbox" id="hobby2" name="hobby_jääkiekko" value="jääkiekko" checked>
+        <label for="hobby2">jääkiekko</label><br>
+        <input type="checkbox" id="hobby3" name="hobby_piirtäminen" value="piirtäminen" checked>
+        <label for="hobby3">piirtäminen</label><br>
+        <input type="checkbox" id="hobby4" name="hobby_kirjoittaminen" value="kirjoittaminen">
+        <label for="hobby4">kirjoittaminen</label><br><br>
+
+        <input type="submit" value="Lähetä">
+        <input type="reset" value="Tyhjennä">
+    </form>
+</body>
+</html>

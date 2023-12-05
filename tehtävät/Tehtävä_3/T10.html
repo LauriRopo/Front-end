@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kurssi ilmoittautuminen</title>
+</head>
+<body>
+    <h1>Kurssi ilmoittautuminen lomake</h1>
+    <form action="https://garagecoders.azurewebsites.net/process" method="post">
+        <table>
+            <tr>
+                <td><label for="name">Nimi:</label></td>
+                <td><input type="text" id="name" name="name" required></td>
+            </tr>
+            <tr>
+                <td><label for="vuosi">Vuosikurssi:</label></td>
+                <td><input type="password" id="vuosi" name="vuosi" required></td>
+            </tr>
+            <tr>
+                <td><label for="Kurssi">Kurssin nimi:</label></td>
+                <td>
+                    <select id="Kurssi" name="Kurssi" multiple>
+                        <optgroup label="Ryhmä 1">
+                            <option value="Matikka 1">Matikka 1</option>
+                            <option value="Fysiikka 1">Fysiikka 1</option>
+                        </optgroup>
+                        <optgroup label="Ryhmä 2">
+                            <option value="Pesäpallon perusteet">Pesäpallon perusteet</option>
+                            <option value="Liikunta 2">Liikunta 2</option>
+                        </optgroup>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="kurssityyppi">Kurssin tyyppi:</label></td>
+                <td>
+                    <select id="kurssityyppi" name="kurssityyppi">
+                        <option value="Perusteet">Perusteet</option>
+                        <option value="etäkurssi">etäkurssi</option>
+                        <option value="lähiopetus">lähiopetus</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Sukupuoli:</label></td>
+                <td>
+                    <input type="radio" id="mies" name="gender" value="mies">
+                    <label for="mies">Mies</label>
+                    <input type="radio" id="nainen" name="gender" value="nainen">
+                    <label for="nainen">Nainen</label>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Harrastukset:</label></td>
+                <td>
+                    <input type="checkbox" id="hobby1" name="hobby_pesäpallo" value="pesäpallo" checked>
+                    <label for="hobby1">pesäpallo</label><br>
+                    <input type="checkbox" id="hobby2" name="hobby_jääkiekko" value="jääkiekko" checked>
+                    <label for="hobby2">jääkiekko</label><br>
+                    <input type="checkbox" id="hobby3" name="hobby_piirtäminen" value="piirtäminen" checked>
+                    <label for="hobby3">piirtäminen</label><br>
+                    <input type="checkbox" id="hobby4" name="hobby_kirjoittaminen" value="kirjoittaminen">
+                    <label for="hobby4">kirjoittaminen</label><br>
+                </td>
+            </tr>
+            <tr style="display:none;">
+                <td><label for="oppilaitos">Oppilaitos:</label></td>
+                <td>
+                    <input type="text" id="oppilaitos" name="oppilaitos" value="Savonia AMK" readonly>
+                </td>
+            </tr>
+        </table>
+        <input type="image" src="https://www.floristik24.fi/media/images/org/Deko-Gemuese-Paprika-rot-9cm-9124-02.jpg", width = "32px" alt="Lähetä">
+        <input type="reset" value="Tyhjennä">
+    </form>
+</body>
+</html>

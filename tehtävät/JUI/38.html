@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syntymäpäivän Valinta</title>
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+    <script>
+        $(function () {
+            $("#datepicker").datepicker({
+                dateFormat: 'dd.mm.yy',
+                changeYear: true,
+                yearRange: "1996:2015",
+                onSelect: function (dateText) {
+
+                    $("#selected-date").text("Pvm: " + dateText).css("color", "red");
+                }
+            });
+        });
+    </script>
+
+    <script>
+        var kunnat = ["Kuopio", "Oulu", "Tampere", "Helsinki", "Kouvola", "Jyväskylä", "Joensuu", "Turku", "Seinäjoki", "Espoo", "Vantaa", "Lahti"];
+
+        $(function () {
+
+            $("#placeofbirth").autocomplete({
+                source: kunnat
+            });
+        });
+    </script>
+
+
+
+</head>
+
+<body>
+
+    <h2>Choose a date and place of birth</h2>
+
+    <form>
+        <label for="datepicker">Birthday:</label>
+        <input type="text" id="datepicker" name="datepicker">
+    </form>
+
+    <form>
+        <label for="placeofbirth">place of birth:</label>
+        <input type="text" id="placeofbirth" name="placeofbirth">
+    </form>
+
+
+
+    <p id="selected-date">Date has not been selected</p>
+
+</body>
+
+</html>

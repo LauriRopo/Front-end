@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .header {
+            grid-area: header;
+            background-color: cyan;
+            padding: 30px;
+            text-align: center;
+            font-size: 35px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-areas:
+                'header header header header header header'
+                'left left right right right right'
+                'footer footer footer footer footer footer';
+            grid-column-gap: 100px;
+        }
+        .flex-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            background-color: DodgerBlue;
+            padding: 45px;
+        
+        }
+
+        .flex-container > div {
+            background-color: #f1f1f1;
+            width: 100px;
+            margin: 10px;
+            text-align: left;
+            line-height: 75px;
+            font-size: 30px;
+            padding: 45px; 
+        }
+        .footer {
+            grid-area: footer;
+            background-color: cyan;
+            padding: 15px;
+            margin: 5px;
+            text-align: center;
+        }
+        .luettelo{
+            font-size: medium;
+            background-color: orange;
+            padding-left: 25%;
+            width: 500px;
+            height: 500px;
+            margin: 3px;
+           
+            
+        }
+           .luettelo li{
+            list-style-type: none;
+        }
+           #keski{
+            background-color: red;
+            
+            padding-left: 25%;
+            width: 500px;
+            height: 500px;
+            margin: 3px;
+            
+
+           }
+           #sisalto{
+            display: flex;
+            flex-direction: row;
+            margin: 5px;
+
+            }
+
+
+
+        @media (max-width: 600px) {
+            .grid-container {
+                grid-template-areas:
+                    'header header header header header header'
+                    'left left left left left left'
+                    'right right right right right right'
+                    'footer footer footer footer footer footer';
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="header">
+            <h2>Tervetuloa</h2>
+        </div>
+    </div>
+
+    <div id ="sisalto">
+        <aside class="luettelo">
+            <ul>
+
+                <h1>Kissoja</h1>
+                <li>toka</li>
+
+            </ul>
+        </aside>
+        <section id="keski">
+
+            <h1>Koiria</h1>
+            <p>1</p>
+
+        </section>
+    </div>
+
+
+
+
+
+
+    
+   
+        
+    
+
+</body>
+</html>
